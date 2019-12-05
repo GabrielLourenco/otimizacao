@@ -1,0 +1,12 @@
+label {
+    pointer-events: none;
+}
+section button ~ button {
+    margin-left: 0.5em;
+}
+.math {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4em;
+}
+
+.hidden { display: none;}

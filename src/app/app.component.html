@@ -1,20 +1,183 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo center">Trabalho de Otimização</a>
+  </div>
+</nav>
+<section style="margin: 1.5em;">
+  <form class="" (ngSubmit)="calculate()" #heroForm="ngForm">
+    <div class="section">
+      <h5>Prioridade de execução das atividades</h5>
+      <div class="row">
+        <div class="input-field col s2">
+          <input type="number" [(ngModel)]="prioridadeBack" name="prioridadeBack">
+          <label for="prioridadeBack">Backend</label>
+        </div>
+        <div class="input-field col s2">
+          <input type="number" [(ngModel)]="prioridadeFront" name="prioridadeFront">
+          <label for="prioridadeFront">Frontend</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="number" [(ngModel)]="prioridadeReuni" name="prioridadeReuni">
+          <label for="prioridadeReuni">Reuniões</label>
+        </div>
+        <div class="input-field col s2">
+          <input type="number" [(ngModel)]="prioridadeTests" name="prioridadeTests">
+          <label for="prioridadeTests">Testes</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="number" [(ngModel)]="prioridadeCorre" name="prioridadeCorre">
+          <label for="prioridadeCorre">Correções</label>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="section">
+      <h5>Custo das atividades</h5>
+      <div class="row">
+        <div class="input-field col s2">
+          <input type="number" [(ngModel)]="custosBack" name="custosBack">
+          <label for="custosBack">Backend</label>
+        </div>
+        <div class="input-field col s2">
+          <input type="number" [(ngModel)]="custosFront" name="custosFront">
+          <label for="custosFront">Frontend</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="number" [(ngModel)]="custosReuni" name="custosReuni">
+          <label for="custosReuni">Reuniões</label>
+        </div>
+        <div class="input-field col s2">
+          <input type="number" [(ngModel)]="custosTests" name="custosTests">
+          <label for="custosTests">Testes</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="number" [(ngModel)]="custosCorre" name="custosCorre">
+          <label for="custosCorre">Correções</label>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="section">
+      <h5>Quantidades</h5>
+      <div class="row">
+        <div class="input-field col s3">
+          <input type="number" [(ngModel)]="qtdeDev" name="qtdeDev">
+          <label for="qtdeDev">Desenvolvedores</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="number" [(ngModel)]="qtdeHrs" name="qtdeHrs">
+          <label for="qtdeHrs">Horas</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="number" [(ngModel)]="qtdeDay" name="qtdeDay">
+          <label for="qtdeDay">Dias</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="number" [(ngModel)]="qtdeMon" name="qtdeMon">
+          <label for="qtdeMon">Valor a ser investido</label>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="section">
+      <h5>Número máximo de horas para</h5>
+      <div class="row">
+        <div class="input-field col s2">
+          <input type="number" [(ngModel)]="horasBack" name="horasBack">
+          <label for="horasBack">Backend</label>
+        </div>
+        <div class="input-field col s2">
+          <input type="number" [(ngModel)]="horasFront" name="horasFront">
+          <label for="horasFront">Frontend</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="number" [(ngModel)]="horasReuni" name="horasReuni">
+          <label for="horasReuni">Reuniões</label>
+        </div>
+        <div class="input-field col s2">
+          <input type="number" [(ngModel)]="horasTests" name="horasTests">
+          <label for="horasTests">Testes</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="number" [(ngModel)]="horasCorre" name="horasCorre">
+          <label for="horasCorre">Correções</label>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="section">
+      <button class="waves-effect waves-light btn" type="submit">Gerar</button>
+      <button class="waves-effect waves-light btn-flat" type="reset">Limpar</button>
+    </div>
+
+    
+  </form>
+  
+  <ng-container *ngIf="problem">
+    <div class="divider"></div>
+    <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <div class="math">
+              <p>
+                {{ problem.optimizationType | uppercase }}
+                <b>Z =
+                  <span *ngFor="let variable of problem.objective | keyvalue; let i = index"> {{ variable.value == 1 ? '' : variable.value }}x<sub>{{i+1}}</sub> <span *ngIf="variable.key != 'e'">+</span></span>
+                </b>
+              </p>
+              <blockquote>Sujeito às restrições:</blockquote>
+              <p *ngFor="let constraint of problem.constraints"><strong>
+                <span *ngFor="let vari of constraint.namedVector | keyvalue; let j = index;" [ngClass]="{'hidden': vari.value == 0}">
+                  {{ vari.value == 1 ? '' : vari.value }}x<sub>{{j + 1}}</sub>
+                </span>
+                <span>{{ ' ' + constraint.constraint + ' ' + constraint.constant }}</span>
+              </strong></p>
+
+              <ng-container *ngIf="result">
+                <blockquote>De acordo com o Simple-Simplex, temos:</blockquote>
+  
+                <strong>Z<sub>Max</sub> = {{ result.solution.optimum }}</strong>, com
+                <p *ngFor="let coef of result.solution.coefficients | keyvalue; let k = index">
+                  x<sub>{{ k+1 }}</sub> = {{ coef.value }}
+                </p>
+
+                <ul class="collapsible">
+                  <li>
+                    <div class="collapsible-header">Tableau Final</div>
+                    <div class="collapsible-body">
+                      <pre>
+                        <p *ngFor="let ft of result.details.finalTableau">
+                          | {{ ft.join(' ') }} |
+                        </p>
+                      </pre>
+                    </div>
+                  </li>
+                  <!-- <li>
+                    <div class="collapsible-header">Todos os Tableau</div>
+                    <div class="collapsible-body">
+                      <pre>
+                        <p *ngFor="let tb of result.details.tableaus">
+                          | {{ ft.join(' ') }} |
+                        </p>
+                      </pre>
+                    </div>
+                  </li> -->
+                </ul>
+
+              </ng-container>
+            </div>
+            <pre>
+              {{ result | json }}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</section>
 
